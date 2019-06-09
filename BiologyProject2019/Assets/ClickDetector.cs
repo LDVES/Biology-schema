@@ -3,7 +3,6 @@ using TMPro;
 
 public class ClickDetector : MonoBehaviour
 {
-    public TextMeshPro TestText;
 
     private GameObject popup;
     private PopupManager popupManager;
@@ -16,8 +15,8 @@ public class ClickDetector : MonoBehaviour
 
     private void OnMouseDown()
     {
-        print(TestText.text =  gameObject.name);
         popupManager.SwitchPopups();
+        SwitchGraphicsToChecked();
         SetCurrentPopup();
     }
 
@@ -25,5 +24,15 @@ public class ClickDetector : MonoBehaviour
     {
         popupManager.CurrentPopup = popup;
         popup.SetActive(true);
+    }
+
+    public void SwitchGraphicsToChecked()
+    {
+        gameObject.GetComponentInChildren<SpriteRenderer>().sprite = popupManager.Checked;
+    }
+
+    public void SwitchGraphicsTounchecked()
+    {
+        gameObject.GetComponentInChildren<SpriteRenderer>().sprite = popupManager.Unchecked;
     }
 }

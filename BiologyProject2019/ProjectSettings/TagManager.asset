@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - PopupManager
+  - Button
   layers:
   - Default
   - TransparentFX
